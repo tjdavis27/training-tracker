@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Florence Training Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
+  <script src="catalog.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">ER</div>
+        <div>
+          <h1>Training Tracker</h1>
+          <p>Florence</p>
+        </div>
+      </div>
+      <nav id="nav">
+        <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="staff">Staff</button>
+        <button class="nav-btn" data-view="logs">Updates</button>
+        <button class="nav-btn" data-view="setup">Setup</button>
+      </nav>
+      <div class="sync-card">
+        <div class="sync-dot" id="syncDot"></div>
+        <div>
+          <strong id="syncLabel">Local Mode</strong>
+          <span id="syncDetail">Saved on this device</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">THE ESCAPE ROOM FLORENCE</p>
+          <h2 id="pageTitle">Training Dashboard</h2>
+        </div>
+        <div class="top-actions">
+          <button class="button ghost" id="exportBtn">Export Backup</button>
+          <button class="button primary" id="quickLogBtn">+ Update</button>
+        </div>
+      </header>
+
+      <section id="dashboardView" class="view active"></section>
+      <section id="staffView" class="view"></section>
+      <section id="logsView" class="view"></section>
+      <section id="setupView" class="view"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" id="modal"></div>
+  </div>
+  <div class="toast" id="toast"></div>
+</body>
+</html>
